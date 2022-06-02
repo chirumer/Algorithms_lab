@@ -69,18 +69,14 @@ int main() {
         double time_taken;
     
         start = clock();
-        for (int i = 0; i < 100000; i++) {
-            linear_search(elements, n, search_element);
-        }
+        linear_search(elements, n, search_element);
         end = clock();
         time_taken = (end - start)/(double)CLOCKS_PER_SEC * 1000;
         printf("Time taken for linear search with %d elements: %lf milliseconds\n", n, time_taken);
     
     
         start = clock();
-        for (int i = 0; i < 100000; i++) {
-            binary_search(elements, n, search_element);
-        }
+        binary_search(elements, n, search_element);
         end = clock();
         time_taken = (end - start)/(double)CLOCKS_PER_SEC * 1000;
         printf("Time taken for binary search with %d elements: %lf milliseconds\n", n, time_taken);

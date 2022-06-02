@@ -35,6 +35,18 @@ bool binary_search(int elements[], int n, int search) {
     return false;
 }
 
+void bubble_sort(int arr[], int n)
+{
+    int i, j;
+    for (i = 0; i < n - 1; i++)
+        for (j = 0; j < n - i - 1; j++)
+            if (arr[j] > arr[j + 1]) {
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+}
+
 int main() {
     
     srand(time(0));
@@ -49,6 +61,7 @@ int main() {
         for (int i = 0; i < n; i++) {
             elements[i] = rand();
         }
+        bubble_sort(elements, n);
     
         int search_element = rand();
     
@@ -61,7 +74,7 @@ int main() {
         }
         end = clock();
         time_taken = (end - start)/(double)CLOCKS_PER_SEC * 1000;
-        printf("Time taken for 1000 linear searches with %d elements: %lf milliseconds\n", n, time_taken);
+        printf("Time taken for linear search with %d elements: %lf milliseconds\n", n, time_taken);
     
     
         start = clock();
@@ -70,7 +83,7 @@ int main() {
         }
         end = clock();
         time_taken = (end - start)/(double)CLOCKS_PER_SEC * 1000;
-        printf("Time taken for 1000 binary searches with %d elements: %lf milliseconds\n", n, time_taken);
+        printf("Time taken for binary search with %d elements: %lf milliseconds\n", n, time_taken);
     }
     
     return 0;

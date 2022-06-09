@@ -21,7 +21,7 @@ int binary_srch(int a[], int srch, int lowr, int uppr) {
         return -1;
     }
     int middl = (lowr+uppr)/2;
-    if (a[middl] = srch) {
+    if (a[middl] == srch) {
         return middl;
     }
     if (srch < a[middl]) {

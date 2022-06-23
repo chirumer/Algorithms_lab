@@ -57,7 +57,18 @@ int main() {
 
 
 /*
+
 Sample Output:
+
+Enter number of nodes: 5
+Enter the adjacency matrix: 
+0 1 1 1 0
+1 0 1 0 0
+1 1 0 1 1
+1 0 1 0 1
+0 0 1 1 0
+Enter starting position: 1
+Nodes visitable from 1: 1 2 3 4 5
 
 Enter number of nodes: 5
 Enter the adjacency matrix: 

@@ -53,6 +53,10 @@ int main() {
     scanf("%d", &start);
     
     int visited_nodes[100];
+    for (int i = 0; i < size; i++) {
+        visited_nodes[i] = 0;
+    }
+    
     bfs(size, adjacency, start-1, visited_nodes);
     
     printf("Nodes visitable from %d:", start);

@@ -2,24 +2,11 @@
 
 #include <stdio.h>
 
-int queue[100];
-int top = -1;
-
-void insert_queue(int ele) {
-    queue[++top] = ele;
-}
-
-int delete_queue() {
-    return queue[top--];
-}
-
-int visited_nodes[100];
-
-void bfs(int size, int adjacency[][100], int current_node) {
+void bfs(int size, int adjacency[][100], int current_node, int visited_nodes[]) {
     visited_nodes[current_node] = 1;
     for (int i = 0; i < size; i++) {
         if (adjacency[current_node][i] == 1 && visited_nodes[i] != 1) {
-            bfs(size, adjacency, i);
+            bfs(size, adjacency, i, visited_nodes);
         }
     }
 }
@@ -42,7 +29,8 @@ int main() {
     printf("Enter starting position: ");
     scanf("%d", &start);
     
-    bfs(size, adjacency, start-1);
+    int visited_nodes[100];
+    bfs(size, adjacency, start-1, visited_nodes);
     
     printf("Nodes visitable from %d:", start);
     for (int i = 0; i < size; i++) {
